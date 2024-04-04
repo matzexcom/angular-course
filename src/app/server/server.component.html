@@ -1,0 +1,6 @@
+<li
+  [ngStyle]="{color: serverStatus === 'offline' ? 'red' : 'green'}"
+  [ngClass]="{'fw-bold': serverStatus === 'offline'}"
+>
+  Server with ID: {{ serverId }} is {{ getServerStatus() }}
+</li>
