@@ -1,15 +1,18 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe Book</a>
+    <a href="#" (click)="onRouteChange('recipe')" class="navbar-brand">Recipe Book</a>
     <div class="d-flex flex-row gap-4 navbar-nav">
       <div class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a href="#" (click)="onRouteChange('recipe')" class="nav-link" [ngClass]="{
+        'active': currentRoute === 'recipe',
+        'fw-bolder': currentRoute === 'recipe'
+        }"  aria-current="page">Home</a>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a href="#" (click)="onRouteChange('shopping')" class="nav-link" [ngClass]="{
+        'active': currentRoute === 'shopping',
+        'fw-bolder': currentRoute === 'shopping'
+        }">Shopping</a>
       </div>
       <div class="nav-item">
         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
