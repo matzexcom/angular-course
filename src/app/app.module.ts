@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { NgOptimizedImage } from '@angular/common';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgOptimizedImage } from '@angular/common';
     RecipeDetailComponent,
     RecipeComponent,
     ShoppingComponent,
+    DropdownDirective,
   ],
   imports: [BrowserModule, FormsModule, NgOptimizedImage],
   providers: [],

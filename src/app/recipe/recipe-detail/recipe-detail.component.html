@@ -1,7 +1,12 @@
 <ng-container *ngIf="recipe">
   <div class="row">
     <div class="col-12">
-      <img [src]="recipe.imagePath" alt="{{ recipe.imageAlt }}" class="img-fluid" width="50">
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.imageAlt }}"
+        class="img-fluid"
+        width="50"
+      />
     </div>
   </div>
   <div class="row">
@@ -9,27 +14,24 @@
       <h2>
         {{ recipe.name }}
       </h2>
-      <p> {{ recipe.description }} </p>
+      <p>{{ recipe.description }}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      <button class="btn btn-primary dropdown-toggle">
-        Manage Recipe <span class="caret"></span>
-      </button>
+      <div appDropdown class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" #dropdownToggle>
+          Manage Recipe <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" #dropdownMenu>
+          <li><a class="dropdown-item" href="#">To Shopping List</a></li>
+          <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+          <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="#">To Shopping List</a>
-        <a href="#">Edit Recipe</a>
-        <a href="#">Delete Recipe</a>
-      </li>
-    </ul>
   </div>
   <div class="row">
-    <div class="col-12">
-      Ingredients
-    </div>
+    <div class="col-12">Ingredients</div>
   </div>
 </ng-container>
-
