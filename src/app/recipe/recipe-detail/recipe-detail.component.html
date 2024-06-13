@@ -31,7 +31,16 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">Ingredients</div>
-  </div>
+  <h4>Ingredients</h4>
+  <ul class="list-group">
+    <li
+      *ngFor="let ingredient of recipe.ingredients"
+      class="list-group-item d-flex justify-content-between align-items-start gap-2"
+    >
+      <span class="fw-bold">{{ ingredient.name }}</span
+      ><span class="px-2 rounded-pill text-bg-primary">{{
+        ingredient.amount
+      }}</span>
+    </li>
+  </ul>
 </ng-container>
