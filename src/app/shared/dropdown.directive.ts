@@ -2,9 +2,7 @@ import {
   AfterContentInit,
   ContentChild,
   Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
+  ElementRef
 } from '@angular/core';
 import { fromEvent } from 'rxjs';
 
@@ -15,6 +13,11 @@ export class DropdownDirective implements AfterContentInit {
 
   ngAfterContentInit(): void {
     fromEvent(this.dropdownToggle.nativeElement, 'click').subscribe(() => {
+      this.dropdownToggle.nativeElement.classList.toggle('show');
+      this.dropdownMenu.nativeElement.classList.toggle('show');
+    });
+
+    fromEvent(this.dropdownMenu.nativeElement, 'click').subscribe(() => {
       this.dropdownToggle.nativeElement.classList.toggle('show');
       this.dropdownMenu.nativeElement.classList.toggle('show');
     });
